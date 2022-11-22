@@ -4,7 +4,8 @@
 Projeyi klonlayın.
 
 ```
-git clone git@github.ibra233/task.git
+
+git clone https://github.com/ibra233/task.git
 ```
 
 Proje klasörünün içine girin
