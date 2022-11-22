@@ -167,6 +167,7 @@
     autoWidth: true,
     processing: true,
     serverSide: true,
+    order: [[0, 'desc']],
     @if (App::isLocale('tr')) 
     language: {
               url: "./dist/js/tr.json"

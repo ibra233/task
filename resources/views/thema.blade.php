@@ -48,23 +48,18 @@
         <!-- ============================================================== -->
         <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                <div class="navbar-header" data-logobg="skin5">
+                <div class="navbar-header " data-logobg="skin5">
                     <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand " href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon ps-2">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../assets/images/logo-icon.png" alt="homepage" class="light-logo"
-                                width="25" />
-                        </b>
+                        
                         <!--End Logo icon -->
                         <!-- Logo text -->
-                        <span class="logo-text ms-2">
+                        <span class="logo-text  pt-3 d-flex align-items-center justify-content-center">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-text.png" alt="homepage" class="light-logo" />
+                            <img src="../assets/images/task.png" alt="homepage" class="light-logo w-50" />
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
@@ -168,17 +163,22 @@
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{ route('welcome') }}" aria-expanded="false"><i
+                                    class="fas fa-home"></i><span class="hide-menu">{{ __('view.home') }}</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('industry.index') }}" aria-expanded="false"><i
-                                    class="mdi mdi-view-dashboard"></i><span class="hide-menu">{{ __('view.header-industry') }}</span></a>
+                                    class="fas fa-industry"></i><span class="hide-menu">{{ __('view.header-industry') }}</span></a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('company.index') }}"
-                                aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                aria-expanded="false"><i class="fas fa-building"></i><span
                                     class="hide-menu">{{ __('view.header-company') }}</span></a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('employee.index') }}"
-                                aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                aria-expanded="false"><i class="fas fa-users"></i><span
                                     class="hide-menu">Çalışanlar</span></a>
                         </li>
 

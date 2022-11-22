@@ -5,8 +5,8 @@ const cancelIndustryHtml = `<div class="col d-flex align-items-center">
 
 const changehtmk = document.querySelector("#industries").cloneNode(true);
 const companyUpdateModal = document.querySelector('#company-update-modal')
-let updateCModal;
-let updatCeId;
+let updateModal;
+let updateId;
 const lang = document.querySelector('html').getAttribute('lang');
 const notification = {
 tr:{
@@ -67,9 +67,9 @@ async function companyAdd(event){
  }
 
  function updateModalCompany(element,data){
-    updateCModal = new bootstrap.Modal(companyUpdateModal, {});
-    updatCeId = data;
-    updateCModal.show();
+    updateModal = new bootstrap.Modal(companyUpdateModal, {});
+    updateId = data;
+    updateModal.show();
     
     companyUpdateModal.querySelector('input[name="name"]').value = element.closest('tr').children[1].innerHTML;
 
@@ -83,7 +83,7 @@ async function updateCompany(event){
     event.preventDefault();
     const form = new FormData(event.target);
  
-    const result = await fetch(`/company/update/${updatCeId}`, {
+    const result = await fetch(`/company/update/${updateId}`, {
         method: "POST",
         headers: {
             "X-CSRF-TOKEN": form.get('_token'),

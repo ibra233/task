@@ -37,7 +37,7 @@ class EmployeeController extends Controller
         $employee = new Employees($validated);
         $employee->save();
         
-        return response()->json( __('view.notication-add-employee'));
+        return response()->json( __('view.notication-employee-add'));
     }
 
 

@@ -2,7 +2,7 @@
 
 return [
 
-
+    'home' => 'Anasayfa',
     'header-industry' => 'Endüstriler',
     'add-industry' => 'Endüstri Ekle',
     'edit' => 'Düzenle',

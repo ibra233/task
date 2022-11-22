@@ -186,6 +186,7 @@
     autoWidth: true,
     processing: true,
     serverSide: true,
+    order: [[0, 'desc']],
     @if (App::isLocale('tr')) 
     language: {
               url: "./dist/js/tr.json"
@@ -206,7 +207,7 @@
       { "width": "20%", "targets": 4 },
       {
         render: function(data, type, row){
-          return   `<img class="img-thumbnail" src='${data}'>`
+          return   `<img class="img-thumbnail w-50 h-50" src='${data}'>`
         },
         targets: 2,
        

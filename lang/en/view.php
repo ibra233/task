@@ -2,7 +2,7 @@
 
 return [
 
-
+    'home' => 'Home',
     'header-industry' => 'Industries',
     'add-industry' => 'Add Industry',
     'edit' => 'Edit',

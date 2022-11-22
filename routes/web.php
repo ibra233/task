@@ -21,8 +21,8 @@ use App\Http\Controllers\EmployeeController;
 
 Route::middleware('admin')->group(function(){
     Route::get('/', function () {
-        return view('industries');
-    });
+        return view('welcome');
+    })->name('welcome');
     Route::resource('industry', IndustryController::class)->only([
         'index', 'store', 'update', 'destroy'
     ]);
