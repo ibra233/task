@@ -45,7 +45,7 @@ class CompanyController extends Controller
         foreach ($validated['company_industry'] as  $industry) {
             $data[] = ['industry_id' => $industry];
         }
-        $company->service()->createMany($data);
+        $company->industry()->createMany($data);
     }
         $details['email'] = $request->user()->email;
         $details['name'] = $validated['name'];
