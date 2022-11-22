@@ -4,7 +4,6 @@
 Projeyi klonlayın.
 
 ```
-
 git clone https://github.com/ibra233/task.git
 ```
 
@@ -39,6 +38,12 @@ Veritabanını tohumlayın
 
 ```
 php artisan db:seed
+```
+
+Depolama alanını bağlayın 
+
+```
+php artisan storage:link
 ```
 
 Mail gönderiminin çalışması için .env dosyasında alttaki satırları ayarlamanız gerekmektedir.
