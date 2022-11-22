@@ -13,19 +13,18 @@ class Companies extends Model
     use HasFactory;
     public  function getWithName(){
 
-        // return self::select('*')->rightJoin('industry_of_companies','industry_of_companies.company_id','companies.id')->get();
-        // return $this->hasMany('App\Models\IndustryOfCompanies','company_id', 'id');
+        
         return $this->hasManyThrough(
             'App\Models\Industries',
             'App\Models\IndustryOfCompanies',
-            'company_id', // Foreign key on the industryofcompanies table...
-            'id', // Foreign key on the industry table...
-            'id', // Local key on the company table...
-            'industry_id' // Local key on the industryofcompanies table...
+            'company_id', 
+            'id', 
+            'id', 
+            'industry_id' 
         );
     }
 
-    public function service(){
+    public function industry(){
         return $this->hasMany('App\Models\IndustryOfCompanies', "company_id", "id");
     }
 }

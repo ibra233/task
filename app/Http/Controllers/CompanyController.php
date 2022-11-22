@@ -70,7 +70,7 @@ class CompanyController extends Controller
             foreach ($validated['company_industry'] as  $industry) {
                 $data[] = ['industry_id' => $industry];
             }
-            $company->service()->createMany($data);
+            $company->industry()->createMany($data);
         }
 
         return response()->json(__('view.notication-company-update'));
