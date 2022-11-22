@@ -47,7 +47,7 @@ class CompanyController extends Controller
         }
         $company->service()->createMany($data);
     }
-        $details['email'] = 'ibrahimsandkll@gmail.com';
+        $details['email'] = $request->user()->email;
         $details['name'] = $validated['name'];
         SendEmailJob::dispatchAfterResponse($details);
         return response()->json(__('view.notication-company-add'));
