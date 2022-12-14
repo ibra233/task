@@ -16,9 +16,10 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!$request->user()){
+        if (! $request->user()) {
             return redirect('/login');
         }
+
         return $next($request);
     }
 }

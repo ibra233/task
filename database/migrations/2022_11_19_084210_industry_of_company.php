@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('industry_of_companies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')
-            ->constrained('companies')->onUpdate('cascade')
+            ->constrained()->onUpdate('cascade')
             ->onDelete('cascade');
             $table->foreignId('industry_id')
             ->constrained('industries')->onUpdate('cascade')

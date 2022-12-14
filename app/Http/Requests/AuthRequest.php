@@ -22,19 +22,18 @@ class AuthRequest extends FormRequest
      * @return array<string, mixed>
      */
     public function rules()
-    {   
-        
+    {
         return [
             'email' => 'required|email',
-            'password'=> 'required',
-            'company_industry.*'=>'nullable|integer'
+            'password' => 'required',
+            'company_industry.*' => 'nullable|integer',
         ];
     }
 
     public function attributes()
     {
         return [
-            'password' => __('view.password')
+            'password' => __('view.password'),
         ];
     }
 }

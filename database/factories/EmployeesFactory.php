@@ -2,8 +2,9 @@
 
 namespace Database\Factories;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\Companies;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Employees>
  */
@@ -17,9 +18,10 @@ class EmployeesFactory extends Factory
     public function definition()
     {
         $ids = Companies::pluck('id');
+
         return [
             'name' => $this->faker->name,
-            'company_id' => $this->faker->randomElement($ids)
+            'company_id' => $this->faker->randomElement($ids),
         ];
     }
 }

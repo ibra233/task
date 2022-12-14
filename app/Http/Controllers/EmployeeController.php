@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Employees;
-use App\Models\Companies;
 use App\Http\Requests\EmployeeRequest;
+use App\Models\Companies;
+use App\Models\Employees;
+use Illuminate\Http\Request;
+
 class EmployeeController extends Controller
 {
     /**
@@ -15,14 +16,13 @@ class EmployeeController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->ajax()){
+        if ($request->ajax()) {
             return datatables()->collection(Employees::with('company')->get())->toJson();
         }
         $companies = Companies::all();
-        return view('employees',compact('companies'));
-    }
 
-    
+        return view('employees', compact('companies'));
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -36,10 +36,9 @@ class EmployeeController extends Controller
 
         $employee = new Employees($validated);
         $employee->save();
-        
-        return response()->json( __('view.notication-employee-add'));
-    }
 
+        return response()->json(__('view.notication-employee-add'));
+    }
 
     /**
      * Update the specified resource in storage.
@@ -52,8 +51,9 @@ class EmployeeController extends Controller
     {
         $validated = $request->validated();
 
-        Employees::where('id',$id)->update($validated);
-        return response()->json( __('view.notication-employee-update'));
+        Employees::where('id', $id)->update($validated);
+
+        return response()->json(__('view.notication-employee-update'));
     }
 
     /**
@@ -64,7 +64,8 @@ class EmployeeController extends Controller
      */
     public function destroy($id)
     {
-        Employees::where('id',$id)->delete();
+        Employees::where('id', $id)->delete();
+
         return response()->json(__('view.notication-employee-delete'));
     }
 }

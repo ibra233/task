@@ -38,6 +38,5 @@ return [
     'change-language' => 'English',
     'wrong-password' => 'Şifreniz yanlış',
     'logout' => 'Çıkış Yap',
-    
 
 ];

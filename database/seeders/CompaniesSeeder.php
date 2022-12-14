@@ -15,9 +15,9 @@ class CompaniesSeeder extends Seeder
      */
     public function run()
     {
-        Companies::factory()->count(5)->create()->each(function($company){
-            IndustryOfCompanies::factory(rand(1,4))->create([
-                'company_id'=>$company->id
+        Companies::factory()->count(5)->create()->each(function ($company) {
+            IndustryOfCompanies::factory(rand(1, 4))->create([
+                'company_id' => $company->id,
             ]);
         });
     }

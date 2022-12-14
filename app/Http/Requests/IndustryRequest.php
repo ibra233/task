@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+
 class IndustryRequest extends FormRequest
 {
     /**
@@ -35,11 +36,12 @@ class IndustryRequest extends FormRequest
             'name' => __('view.name-industry'),
         ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([
             'errors' => $validator->errors(),
-            'status' => true
-            ], 422));
+            'status' => true,
+        ], 422));
     }
 }

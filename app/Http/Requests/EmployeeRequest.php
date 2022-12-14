@@ -2,12 +2,13 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+
 class EmployeeRequest extends FormRequest
 {
-     /**
+    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
@@ -26,7 +27,7 @@ class EmployeeRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'company_id' => 'required|integer'
+            'company_id' => 'required|integer',
         ];
     }
 
@@ -34,14 +35,15 @@ class EmployeeRequest extends FormRequest
     {
         return [
             'name' => __('view.name-employee'),
-            'company_id' => __('view.company-employee')
+            'company_id' => __('view.company-employee'),
         ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([
             'errors' => $validator->errors(),
-            'status' => true
-            ], 422));
+            'status' => true,
+        ], 422));
     }
 }

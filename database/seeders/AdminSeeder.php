@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
@@ -19,8 +18,8 @@ class AdminSeeder extends Seeder
         User::create([
             'email' => 'hr@girift.tech',
             'name' => 'İbrahim',
-            'password' =>Hash::make('p@ssw0rd'),
-            
-           ]);
+            'password' => Hash::make('p@ssw0rd'),
+
+        ]);
     }
 }

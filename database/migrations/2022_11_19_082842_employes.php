@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('company_id')
-            ->constrained('companies')->onUpdate('cascade')
+            ->constrained()->onUpdate('cascade')
             ->onDelete('cascade');
         });
     }

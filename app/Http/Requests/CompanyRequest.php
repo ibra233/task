@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
+
 class CompanyRequest extends FormRequest
 {
     /**
@@ -23,15 +24,16 @@ class CompanyRequest extends FormRequest
      * @return array<string, mixed>
      */
     public function rules()
-    {   
+    {
         $logo = 'nullable';
-        if(request()->routeIs('company.store')){
+        if (request()->routeIs('company.store')) {
             $logo = 'required';
         }
+
         return [
             'name' => 'required|max:255',
-            'logo'=> $logo.'|mimes:jpg,bmp,png',
-            'company_industry.*'=>'nullable|integer'
+            'logo' => $logo.'|mimes:jpg,bmp,png',
+            'company_industry.*' => 'nullable|integer',
         ];
     }
 
@@ -40,14 +42,15 @@ class CompanyRequest extends FormRequest
         return [
             'name' => __('view.name-company'),
             'logo' => __('view.logo-company'),
-            'company_industry.*'=>__('view.company-industry')
+            'company_industry.*' => __('view.company-industry'),
         ];
     }
+
     protected function failedValidation(Validator $validator)
     {
         throw new HttpResponseException(response()->json([
             'errors' => $validator->errors(),
-            'status' => true
-            ], 422));
+            'status' => false,
+        ], 422));
     }
 }

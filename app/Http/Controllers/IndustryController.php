@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Industries;
-use DataTables;
 use App\Http\Requests\IndustryRequest;
+use App\Models\Industries;
+use Illuminate\Http\Request;
+
 class IndustryController extends Controller
 {
     /**
@@ -14,10 +14,11 @@ class IndustryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
-    {   
-        if($request->ajax()){
+    {
+        if ($request->ajax()) {
             return datatables()->collection(Industries::all())->toJson();
         }
+
         return view('industries');
     }
 
@@ -28,10 +29,11 @@ class IndustryController extends Controller
      */
     public function create(IndustryRequest $request)
     {
-         $validated = $request->validated();
-        
-         $industry = new Industries($validated);
-         $industry->save();
+        $validated = $request->validated();
+
+        $industry = new Industries($validated);
+        $industry->save();
+
         return response()->json(__('view.notication-industry-delete'));
     }
 
@@ -44,14 +46,12 @@ class IndustryController extends Controller
     public function store(IndustryRequest $request)
     {
         $validated = $request->validated();
-        
+
         $industry = new Industries($validated);
         $industry->save();
+
         return response()->json(__('view.notication-industry-add'));
     }
-
-    
-   
 
     /**
      * Update the specified resource in storage.
@@ -64,7 +64,8 @@ class IndustryController extends Controller
     {
         $validated = $request->validated();
 
-        Industries::where('id',$id)->update($validated);
+        Industries::where('id', $id)->update($validated);
+
         return response()->json(__('view.notication-industry-update'));
     }
 
@@ -76,7 +77,8 @@ class IndustryController extends Controller
      */
     public function destroy($id)
     {
-        Industries::where('id',$id)->delete();
+        Industries::where('id', $id)->delete();
+
         return response()->json(__('view.notication-industry-delete'));
     }
 }

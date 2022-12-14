@@ -40,5 +40,4 @@ return [
     'wrong-password' => 'Your password is incorrect',
     'logout' => 'Logout',
 
-
 ];

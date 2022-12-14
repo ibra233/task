@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Http\Middleware\Admin;
-use App\Models\Industries;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -27,7 +25,7 @@ class DatabaseSeeder extends Seeder
             IndustriesSeeder::class,
             CompaniesSeeder::class,
             EmployeesSeeder::class,
-            AdminSeeder::class
+            AdminSeeder::class,
         ]);
     }
 }

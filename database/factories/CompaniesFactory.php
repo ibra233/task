@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Companies>
  */
@@ -17,7 +18,7 @@ class CompaniesFactory extends Factory
     {
         return [
             'name' => $this->faker->company,
-            'logo' =>$this->faker->imageUrl(400, 400)
+            'logo' => $this->faker->imageUrl(400, 400),
         ];
     }
 }

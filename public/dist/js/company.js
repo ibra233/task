@@ -121,7 +121,7 @@ function deleteIndustryOfCompany(event,id){
         cancelButtonText: notification[lang].swalCancel,
     }).then( async (result) => {
         if (result.isConfirmed) {
-            const result = await fetch(`/industryOfCompany/${updatCeId}/${id}`, {
+            const result = await fetch(`/industryOfCompany/${updateId}/${id}`, {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
